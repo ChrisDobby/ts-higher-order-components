@@ -5,8 +5,8 @@ export interface ThingsProps {
     things: string[];
 }
 
-const withThings = (Component: React.ComponentType<ThingsProps>) =>
-    class extends React.Component {
+function withThings<T>(Component: React.ComponentType<T & ThingsProps>) {
+    return class extends React.Component<T> {
         state = { things: [] as string[] };
 
         async componentDidMount() {
@@ -18,5 +18,6 @@ const withThings = (Component: React.ComponentType<ThingsProps>) =>
             return <Component {...this.props} things={this.state.things} />;
         }
     };
+}
 
 export default withThings;

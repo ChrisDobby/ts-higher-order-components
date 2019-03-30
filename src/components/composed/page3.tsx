@@ -17,4 +17,4 @@ function Page3(props: Page3Props) {
     );
 }
 
-export default withHeaderAndFooter(withThings(Page3));
+export default withThings(withHeaderAndFooter(Page3));

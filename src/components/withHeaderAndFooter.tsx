@@ -2,8 +2,8 @@ import * as React from "react";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 
-const withHeaderAndFooter = (Component: React.ComponentType) => (props: {}) => {
-    return (
+function withHeaderAndFooter<T>(Component: React.ComponentType<T>) {
+    return (props: T) => (
         <>
             <header className="app-header">
                 <img src={logo} className="app-logo" alt="logo" />
@@ -22,6 +22,6 @@ const withHeaderAndFooter = (Component: React.ComponentType) => (props: {}) => {
             </footer>
         </>
     );
-};
+}
 
 export default withHeaderAndFooter;
