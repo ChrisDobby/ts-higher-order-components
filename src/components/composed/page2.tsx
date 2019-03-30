@@ -1,9 +1,7 @@
 import * as React from "react";
-import withThings from "../withThings";
+import withThings, { ThingsProps } from "../withThings";
 
-interface Page2Props {
-    things: string[];
-}
+interface Page2Props extends ThingsProps {}
 
 function Page2(props: Page2Props) {
     return (

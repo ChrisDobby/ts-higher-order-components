@@ -1,10 +1,8 @@
 import * as React from "react";
 import withHeaderAndFooter from "../withHeaderAndFooter";
-import withThings from "../withThings";
+import withThings, { ThingsProps } from "../withThings";
 
-interface Page3Props {
-    things: string[];
-}
+interface Page3Props extends ThingsProps {}
 
 function Page3(props: Page3Props) {
     return (
@@ -19,4 +17,4 @@ function Page3(props: Page3Props) {
     );
 }
 
-export default withThings(withHeaderAndFooter(Page3));
+export default withHeaderAndFooter(withThings(Page3));

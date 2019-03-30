@@ -2,7 +2,7 @@ import * as React from "react";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 
-const withHeaderAndFooter = (Component: React.ComponentType<any>) => (props: any) => {
+const withHeaderAndFooter = (Component: React.ComponentType) => (props: {}) => {
     return (
         <>
             <header className="app-header">

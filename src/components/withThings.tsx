@@ -1,7 +1,11 @@
 import * as React from "react";
 import getThings from "../getThings";
 
-const withThings = (Component: React.ComponentType<any>) =>
+export interface ThingsProps {
+    things: string[];
+}
+
+const withThings = (Component: React.ComponentType<ThingsProps>) =>
     class extends React.Component {
         state = { things: [] as string[] };
 
