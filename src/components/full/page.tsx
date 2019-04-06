@@ -16,6 +16,7 @@ class Page extends React.Component {
             <>
                 <header className="app-header">
                     <img src={logo} className="app-logo" alt="logo" />
+                    <span>Home</span>
                     <div className="app-menu">
                         <Link to="/">Home</Link>
                         <Link to="/page1">Composed page 1</Link>

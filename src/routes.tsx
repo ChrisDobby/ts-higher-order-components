@@ -9,9 +9,13 @@ function Routes() {
     return (
         <div className="app">
             <Route exact path="/" component={FullPage} />
-            <Route exact path="/page1" component={Page1} />
+            <Route exact path="/page1" render={() => <Page1 text="This page does not get any data" />} />
             <Route exact path="/page2" component={Page2} />
-            <Route exact path="/page3" component={Page3} />
+            <Route
+                exact
+                path="/page3"
+                render={() => <Page3 text="This page has everything via higher order components" />}
+            />
         </div>
     );
 }

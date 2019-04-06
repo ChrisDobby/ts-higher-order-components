@@ -1,12 +1,13 @@
 import * as React from "react";
+import { Subtract } from "utility-types";
 import getThings from "../getThings";
 
 export interface ThingsProps {
     things: string[];
 }
 
-function withThings<T>(Component: React.ComponentType<T & ThingsProps>) {
-    return class extends React.Component<T> {
+function withThings<T extends ThingsProps>(Component: React.ComponentType<T>) {
+    return class extends React.Component<Subtract<T, ThingsProps>> {
         state = { things: [] as string[] };
 
         async componentDidMount() {
@@ -15,7 +16,7 @@ function withThings<T>(Component: React.ComponentType<T & ThingsProps>) {
         }
 
         render() {
-            return <Component {...this.props} things={this.state.things} />;
+            return <Component {...this.props as T} things={this.state.things} />;
         }
     };
 }

@@ -2,12 +2,14 @@ import * as React from "react";
 import withHeaderAndFooter from "../withHeaderAndFooter";
 import withThings, { ThingsProps } from "../withThings";
 
-interface Page3Props extends ThingsProps {}
+interface Page3Props extends ThingsProps {
+    text: string;
+}
 
 function Page3(props: Page3Props) {
     return (
         <>
-            <p>This page has everything via higher order components</p>
+            <p>{props.text}</p>
             <ul>
                 {props.things.map(thing => (
                     <li key={thing}>{thing}</li>
@@ -17,4 +19,4 @@ function Page3(props: Page3Props) {
     );
 }
 
-export default withThings(withHeaderAndFooter(Page3));
+export default withThings(withHeaderAndFooter(Page3, "Page 3"));
